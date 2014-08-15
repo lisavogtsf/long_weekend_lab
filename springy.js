@@ -339,7 +339,7 @@
 	// made change to mass --LV
 	Layout.ForceDirected.prototype.point = function(node) {
 		if (!(node.id in this.nodePoints)) {
-			var mass = (node.data.mass !== undefined) ? node.data.mass : 4.0;
+			var mass = (node.data.mass !== undefined) ? node.data.mass : 40.0;
 			this.nodePoints[node.id] = new Layout.ForceDirected.Point(Vector.random(), mass);
 		}
 

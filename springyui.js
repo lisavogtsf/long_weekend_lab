@@ -28,11 +28,11 @@ Customization by Lisa Vogt, 2014
 
 jQuery.fn.springy = function(params) {
 	var graph = this.graph = params.graph || new Springy.Graph();
-	var nodeFont = "18px Verdana, sans-serif";
+	var nodeFont = "24px Verdana, sans-serif";
 	var edgeFont = "12px Verdana, sans-serif";
 	var stiffness = params.stiffness || 400.0;
 	var repulsion = params.repulsion || 400.0;
-	var damping = params.damping || 0.5;
+	var damping = params.damping || .3; //0.5
 	var minEnergyThreshold = params.minEnergyThreshold || 0.00001;
 	var nodeSelected = params.nodeSelected || null;
 	var nodeImages = {};
@@ -142,7 +142,7 @@ jQuery.fn.springy = function(params) {
 	};
 
 	var getTextHeight = function(node) {
-		return 16;
+		return 28;
 		// In a more modular world, this would actually read the font size, but I think leaving it a constant is sufficient for now.
 		// If you change the font size, I'd adjust this too.
 	};

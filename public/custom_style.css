@@ -5898,3 +5898,16 @@ td.visible-print {
     display: none !important;
   }
 }
+/*************
+Additions by Lisa Vogt
+**************/
+
+.jumbotron {
+	/*background-image: url("hexellence.png");*/
+	/*background-image: url("wild_olivia/wild_olivia.png");*/
+	/*background-image: url("nami/nami.png");*/
+	/*background-image: url("strange_bullseyes/strange_bullseyes.png")*/
+	/*background-image: url("foggy_birds/foggy_birds.png");*/
+	/*background-image: url("greyfloral/greyfloral.png");*/
+	background-image: url("random_grey_variations.png");
+}

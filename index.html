@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Springy-gh alpha</title>
+	<title>SpringyLV</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel ="stylesheet" href="public/custom_style.css"
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
 <body>
 	<div class="container">
 		<div class="jumbotron">
-			<h2>Spring-gh alpha</h2>
+			<h2>Springy LV</h2>
 
 			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 			<script src="springy.js"></script>
@@ -31,9 +31,13 @@
 				  ],
 				  "edges": [
 				    ["README.md", "myTest.js"],
+				    ["myTest.js", "README.md"],
 				    ["myTest.js", "scraper.js"],
 				    ["README.md", "today.html"],
-				    ["spec", "README.md"]
+				    ["today.html", "README.md"],
+				    ["spec", "README.md"],
+				    ["myTest.js", "today.html"],
+
 				  ]
 				};
 
@@ -45,25 +49,7 @@
 				    graph: graph
 				  });
 				});
-			// // Make new graph
-			// var graph = new Springy.Graph();
 
-			// //Make some nodes
-			// var awesomecode = graph.newNode({label: 'awesomecode.js'});
-			// var coolcode = graph.newNode({label: 'coolcode.js'});
-			// var readme = graph.newNode({label: 'README.md'});
-
-			// graph.newEdge(awesomecode, coolcode);
-			// graph.newEdge(awesomecode, readme);
-
-			// jQuery(function(){
-		 //  		var springy = window.springy = jQuery('#springydemo').springy({
-		 //    			graph: graph, 
-		 //    			nodeSelected: function(node){
-		 //      		console.log('Node selected: ' + JSON.stringify(node.data));
-		 //    			}
-			// 	});
-			// });
 			</script>
 
 			<canvas id="springydemo" width="600" height="400" />
