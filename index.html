@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Springy-gh alpha</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel ="stylesheet" href="public/custom_style.css"
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h2>Spring-gh alpha</h2>
+
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+			<script src="springy.js"></script>
+			<script src="springyui.js"></script>
+			<script>
+			// Make new graph
+			var graph = new Springy.Graph();
+
+			//Make some nodes
+			var awesomecode = graph.newNode({label: 'awesomecode.js'});
+			var coolcode = graph.newNode({label: 'coolcode.js'});
+			var readme = graph.newNode({label: 'README.md'});
+
+			graph.newEdge(awesomecode, coolcode);
+			graph.newEdge(awesomecode, readme);
+
+			jQuery(function(){
+		  		var springy = window.springy = jQuery('#springydemo').springy({
+		    			graph: graph, 
+		    			nodeSelected: function(node){
+		      		console.log('Node selected: ' + JSON.stringify(node.data));
+		    			}
+				});
+			});
+			</script>
+
+			<canvas id="my_canvas" width="600" height="400" />
+			<script>
+			$('#my_canvas').springy({graph: graph});
+			</script>
+
+		</div><!-- closes jumbotron -->
+	</div><!-- closes container -->
+</body>
+</html>
+
