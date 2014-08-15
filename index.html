@@ -21,31 +21,52 @@
 			<script src="springy.js"></script>
 			<script src="springyui.js"></script>
 			<script>
-			// Make new graph
-			var graph = new Springy.Graph();
+				var graphJSON = {
+				  "nodes": [
+				    "README.md",
+				    "myTest.js",
+				    "scraper.js",
+				    "today.html",
+				    "spec"
+				  ],
+				  "edges": [
+				    ["README.md", "myTest.js"],
+				    ["myTest.js", "scraper.js"],
+				    ["README.md", "today.html"],
+				    ["spec", "README.md"]
+				  ]
+				};
 
-			//Make some nodes
-			var awesomecode = graph.newNode({label: 'awesomecode.js'});
-			var coolcode = graph.newNode({label: 'coolcode.js'});
-			var readme = graph.newNode({label: 'README.md'});
+				jQuery(function(){
+				  var graph = new Springy.Graph();
+				  graph.loadJSON(graphJSON);
 
-			graph.newEdge(awesomecode, coolcode);
-			graph.newEdge(awesomecode, readme);
-
-			jQuery(function(){
-		  		var springy = window.springy = jQuery('#springydemo').springy({
-		    			graph: graph, 
-		    			nodeSelected: function(node){
-		      		console.log('Node selected: ' + JSON.stringify(node.data));
-		    			}
+				  var springy = jQuery('#springydemo').springy({
+				    graph: graph
+				  });
 				});
-			});
+			// // Make new graph
+			// var graph = new Springy.Graph();
+
+			// //Make some nodes
+			// var awesomecode = graph.newNode({label: 'awesomecode.js'});
+			// var coolcode = graph.newNode({label: 'coolcode.js'});
+			// var readme = graph.newNode({label: 'README.md'});
+
+			// graph.newEdge(awesomecode, coolcode);
+			// graph.newEdge(awesomecode, readme);
+
+			// jQuery(function(){
+		 //  		var springy = window.springy = jQuery('#springydemo').springy({
+		 //    			graph: graph, 
+		 //    			nodeSelected: function(node){
+		 //      		console.log('Node selected: ' + JSON.stringify(node.data));
+		 //    			}
+			// 	});
+			// });
 			</script>
 
-			<canvas id="my_canvas" width="600" height="400" />
-			<script>
-			$('#my_canvas').springy({graph: graph});
-			</script>
+			<canvas id="springydemo" width="600" height="400" />
 
 		</div><!-- closes jumbotron -->
 	</div><!-- closes container -->
