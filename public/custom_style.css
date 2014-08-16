@@ -5909,6 +5909,8 @@ body {
   color: thistle
 }
 div #left-col {
+    height: 600px;
+    background-color: slategrey;
 }
 
 #springy-col {

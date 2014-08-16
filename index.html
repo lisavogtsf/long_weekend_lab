@@ -2,71 +2,82 @@
 <html>
 <head>
 	<title>SpringyLV</title>
-
 	<!-- Latest compiled and minified CSS -->
-	<link rel ="stylesheet" href="public/custom_style.css"
+	<link rel ="stylesheet" href="public/custom_style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!--from Springy.js -->
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+				<script src="springy.js"></script>
+				<script src="springyui.js"></script>
 </head>
 <body>
 	<div class="container">
-		<div class="col-md-1" id="left-col"></div><!-- closes left column -->
-		<div class="col-md-10" id="springy-col">
-			<h2>Springy LV</h2>
-
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-			<script src="springy.js"></script>
-			<script src="springyui.js"></script>
-			<script>
-				var graphJSON = {
-					"nodes": [
-						"README.md",
-						"config",
-						"migrations",
-						"models",
-						"public",
-						"test",
-						"views",
-						".gitignore",
-						"Procfile",
-						"app.js",
-						"console.js",
-						"package.json",
-						"project1_specs.md"
-					],
-					"edges": [
-						["README.md", "config"],
-						["config", "README.md"],
-						["config", "migrations"],
-						["README.md", "models"],
-						["models", "README.md"],
-						["app.js", "README.md"],
-						["config", "app.js"],
-						["public", "app.js"],
-						["test", "app.js"],
-						["views", "app.js"]
-
-					]
-				};
-
-				jQuery(function(){
-					var graph = new Springy.Graph();
-					graph.loadJSON(graphJSON);
-
-					var springy = jQuery('#springydemo').springy({
-						graph: graph
-					});
+		<div class="row">
+			<div class="col-md-1" id="left-col">
+				<script>
+				jQuery("#left-col").mouseenter(function(){
+					jQuery("#left-col").fadeTo('slow', 0.5);
 				});
+				jQuery("#left-col").mouseleave(function(){
+					jQuery("left-col").fadeTo('slow', 1);
+				});
+				</script>
 
-			</script>
+			</div><!-- closes left column -->
+			<div class="col-md-10" id="springy-col"><!--big central column-->
+				<h2>Springy LV</h2>
+				<script>
+					var graphJSON = {
+						"nodes": [
+							"README.md",
+							"config",
+							"migrations",
+							"models",
+							"public",
+							"test",
+							"views",
+							".gitignore",
+							"Procfile",
+							"app.js",
+							"console.js",
+							"package.json",
+							"project1_specs.md"
+						],
+						"edges": [
+							["README.md", "config"],
+							["config", "README.md"],
+							["config", "migrations"],
+							["README.md", "models"],
+							["models", "README.md"],
+							["app.js", "README.md"],
+							["config", "app.js"],
+							["public", "app.js"],
+							["test", "app.js"],
+							["views", "app.js"]
 
-			<canvas id="springydemo" width="600" height="600">Springy filenames</canvas>
+						]
+					};
 
-		</div><!-- closes center column -->
-		<div class="col-md-1"></div><!-- closes right column -->
+					jQuery(function(){
+						var graph = new Springy.Graph();
+						graph.loadJSON(graphJSON);
+
+						var springy = jQuery('#springydemo').springy({
+							graph: graph
+						});
+					});
+
+				</script>
+
+				<canvas id="springydemo" width="600" height="600">Springy filenames</canvas>
+
+			</div><!-- closes center column -->
+			<div class="col-md-1"></div><!-- closes right column -->
+		</div> <!-- closes row -->
 	</div><!-- closes container -->
 </body>
 </html>
