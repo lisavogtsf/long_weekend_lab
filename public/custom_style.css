@@ -5901,8 +5901,17 @@ td.visible-print {
 /*************
 Additions by Lisa Vogt
 **************/
+body {
+  /*background-color: slategrey;*/
+  /*background-color: darkslateblue;*/
+  /*background-color: lightsteelblue;*/
+  background-color: lavender;
+  color: thistle
+}
+div #left-col {
+}
 
-.jumbotron {
+#springy-col {
 	/*background-image: url("hexellence.png");*/
 	/*background-image: url("wild_olivia/wild_olivia.png");*/
 	/*background-image: url("nami/nami.png");*/
@@ -5910,4 +5919,5 @@ Additions by Lisa Vogt
 	/*background-image: url("foggy_birds/foggy_birds.png");*/
 	/*background-image: url("greyfloral/greyfloral.png");*/
 	background-image: url("random_grey_variations.png");
+    border-radius: 20px;
 }

@@ -13,7 +13,8 @@ page = Nokogiri::HTML(url)
 results = []
 
 results = page.css(".js-directory-link").map do |link|
-    {filename: link.text}
+    # {filename: link.text}
+    link.text
 end
 
 # prints a bunch of objects--not in an array?
