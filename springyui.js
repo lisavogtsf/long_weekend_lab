@@ -300,7 +300,7 @@ jQuery.fn.springy = function(params) {
 
 			// Pulled out the padding aspect sso that the size functions could be used in multiple places
 			// These should probably be settable by the user (and scoped higher) but this suffices for now
-			var paddingX = 12;
+			var paddingX = 28;
 			var paddingY = 12;
 
 			var contentWidth = node.getWidth();
