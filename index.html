@@ -6,7 +6,7 @@
 	<link rel ="stylesheet" href="public/custom_style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	<!--from Springy.js -->
@@ -23,7 +23,7 @@
 					jQuery("#left-col").fadeTo('slow', 0.5);
 				});
 				jQuery("#left-col").mouseleave(function(){
-					jQuery("left-col").fadeTo('slow', 1);
+					jQuery("#left-col").fadeTo('slow', 1);
 				});
 				</script>
 
@@ -48,7 +48,7 @@
 							"project1_specs.md"
 						],
 						"edges": [
-							["README.md", "config"],
+							["README.md", "config", {color: '#CC333F'}],
 							["config", "README.md"],
 							["config", "migrations"],
 							["README.md", "models"],
@@ -67,7 +67,10 @@
 						graph.loadJSON(graphJSON);
 
 						var springy = jQuery('#springydemo').springy({
-							graph: graph
+							graph: graph,
+							nodeSelected: function(node){
+      							console.log('Node selected: ' + JSON.stringify(node.data));
+							}
 						});
 					});
 

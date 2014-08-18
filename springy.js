@@ -74,6 +74,9 @@
 	// this.data.type
 	};
 
+	// addNode function LV
+	// if the node id isn't already in this nodeSet
+	// then push this new node into nodes
 	Graph.prototype.addNode = function(node) {
 		if (!(node.id in this.nodeSet)) {
 			this.nodes.push(node);
@@ -85,6 +88,9 @@
 		return node;
 	};
 
+	// This is the function that takes in string/JSON data and
+	// uses it to create nodes with the argument from JSON
+	// as node identifier and label LV
 	Graph.prototype.addNodes = function() {
 		// accepts variable number of arguments, where each argument
 		// is a string that becomes both node identifier and label
@@ -713,6 +719,8 @@
 		};
 	}
 
+	// test whether the obj is currently empty
+	// returns true/false LV
 	var isEmpty = function(obj) {
 		for (var k in obj) {
 			if (obj.hasOwnProperty(k)) {

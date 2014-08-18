@@ -5908,10 +5908,13 @@ body {
   background-color: lavender;
   color: thistle
 }
-div #left-col {
+#left-col {
     height: 600px;
     background-color: slategrey;
 }
+/*#left-col:hover {
+  background-color: thistle;
+}*/
 
 #springy-col {
 	/*background-image: url("hexellence.png");*/

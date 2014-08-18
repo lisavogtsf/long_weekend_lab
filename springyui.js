@@ -300,8 +300,8 @@ jQuery.fn.springy = function(params) {
 
 			// Pulled out the padding aspect sso that the size functions could be used in multiple places
 			// These should probably be settable by the user (and scoped higher) but this suffices for now
-			var paddingX = 6;
-			var paddingY = 6;
+			var paddingX = 12;
+			var paddingY = 12;
 
 			var contentWidth = node.getWidth();
 			var contentHeight = node.getHeight();
@@ -312,12 +312,13 @@ jQuery.fn.springy = function(params) {
 			ctx.clearRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
 
 			// fill background
+			// good place to mess around with node background colors LV
 			if (selected !== null && selected.node !== null && selected.node.id === node.id) {
-				ctx.fillStyle = "#FFFFE0";
+				ctx.fillStyle = "lavender"; //"#FFFFE0"
 			} else if (nearest !== null && nearest.node !== null && nearest.node.id === node.id) {
-				ctx.fillStyle = "#EEEEEE";
+				ctx.fillStyle = "thistle"; //"#EEEEEE"
 			} else {
-				ctx.fillStyle = "#FFFFFF";
+				ctx.fillStyle = "slategrey"; //#FFFFFF
 			}
 			ctx.fillRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
 
