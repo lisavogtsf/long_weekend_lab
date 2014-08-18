@@ -3,8 +3,8 @@
 <head>
 	<title>SpringyLV</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel ="stylesheet" href="public/custom_style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel ="stylesheet" href="public/custom_style.css">
 	<!-- Optional theme -->
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
 	<!-- Latest compiled and minified JavaScript -->
@@ -17,18 +17,8 @@
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-1" id="left-col">
-				<script>
-				jQuery("#left-col").mouseenter(function(){
-					jQuery("#left-col").fadeTo('slow', 0.5);
-				});
-				jQuery("#left-col").mouseleave(function(){
-					jQuery("#left-col").fadeTo('slow', 1);
-				});
-				</script>
-
-			</div><!-- closes left column -->
-			<div class="col-md-10" id="springy-col"><!--big central column-->
+			<!-- removed left column -->
+			<div class="col-md-12" id="springy-col"><!--big central column-->
 				<h2>Springy LV</h2>
 				<script>
 					var graphJSON = {
@@ -76,10 +66,10 @@
 
 				</script>
 
-				<canvas id="springydemo" width="600" height="600">Springy filenames</canvas>
+				<canvas id="springydemo" width="600" height="600" align="center">Springy filenames</canvas>
 
 			</div><!-- closes center column -->
-			<div class="col-md-1"></div><!-- closes right column -->
+			<!-- removed right column -->
 		</div> <!-- closes row -->
 	</div><!-- closes container -->
 </body>

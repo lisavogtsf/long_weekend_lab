@@ -31,9 +31,6 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
-body {
-  margin: 0;
-}
 a:focus {
   outline: thin dotted;
 }
@@ -249,12 +246,13 @@ html {
   font-size: 62.5%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+/*change body style LV */
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Optima", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
   color: #6b5463;
-  background-color: #e4e4e2;
+  background-color: #6B5463;
 }
 input,
 button,
@@ -5905,8 +5903,12 @@ body {
   /*background-color: slategrey;*/
   /*background-color: darkslateblue;*/
   /*background-color: lightsteelblue;*/
-  background-color: lavender;
+  background-color: slategrey;
   color: thistle
+}
+div.container {
+  border: slategrey;
+  margin: slategrey;
 }
 #left-col {
     height: 600px;

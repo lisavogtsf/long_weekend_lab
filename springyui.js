@@ -326,15 +326,7 @@ jQuery.fn.springy = function(params) {
 			// context.fillRect(s.x + (cornerRadius/2), s.y + (cornerRadius / 2), boxWidth - cornerRadius, boxHeight -cornerRadius);
 
 			// // pasted from info on how to do rounded rectangles jFiddle LV
-			// // Set rectangle and corner values
-			// var rectX = s.x;
-			// var rectY = s.y;
-			// var rectWidth = 100;
-			// var rectHeight = 100;
 			var cornerRadius = 10;
-
-			// // Reference rectangle without rounding, for size comparison
-			// context.fillRect(200, 50, rectWidth, rectHeight);
 
 			// Set faux rounded corners
 			ctx.lineJoin = "round";
@@ -342,6 +334,7 @@ jQuery.fn.springy = function(params) {
 
 			// // Change origin and dimensions to match true size (a stroke makes the shape a bit larger)
 			ctx.strokeRect(s.x - boxWidth/2 +(cornerRadius/2), s.y - boxHeight/2 +(cornerRadius/2), boxWidth -cornerRadius, boxHeight-cornerRadius);
+			ctx.strokeStyle = "slategrey";
 			ctx.fillRect(s.x - boxWidth/2+(cornerRadius/2),  s.y - boxHeight/2+(cornerRadius/2), boxWidth-cornerRadius, boxHeight-cornerRadius);
 
 			if (node.data.image === undefined) {
