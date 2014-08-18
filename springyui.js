@@ -28,8 +28,8 @@ Customization by Lisa Vogt, 2014
 
 jQuery.fn.springy = function(params) {
 	var graph = this.graph = params.graph || new Springy.Graph();
-	var nodeFont = "24px Verdana, sans-serif";
-	var edgeFont = "12px Verdana, sans-serif";
+	var nodeFont = "24px Optima, sans-serif";
+	var edgeFont = "12px Optima, sans-serif";
 	var stiffness = params.stiffness || 400.0;
 	var repulsion = params.repulsion || 400.0;
 	var damping = params.damping || .3; //0.5
@@ -320,13 +320,36 @@ jQuery.fn.springy = function(params) {
 			} else {
 				ctx.fillStyle = "slategrey"; //#FFFFFF
 			}
-			ctx.fillRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
 
-			if (node.data.image == undefined) {
+			// to make rounded corners using HTML5 canvas code LV
+			// below not working LV
+			// context.fillRect(s.x + (cornerRadius/2), s.y + (cornerRadius / 2), boxWidth - cornerRadius, boxHeight -cornerRadius);
+
+			// // pasted from info on how to do rounded rectangles jFiddle LV
+			// // Set rectangle and corner values
+			// var rectX = s.x;
+			// var rectY = s.y;
+			// var rectWidth = 100;
+			// var rectHeight = 100;
+			var cornerRadius = 10;
+
+			// // Reference rectangle without rounding, for size comparison
+			// context.fillRect(200, 50, rectWidth, rectHeight);
+
+			// Set faux rounded corners
+			ctx.lineJoin = "round";
+			ctx.lineWidth = cornerRadius;
+
+			// // Change origin and dimensions to match true size (a stroke makes the shape a bit larger)
+			ctx.strokeRect(s.x - boxWidth/2 +(cornerRadius/2), s.y - boxHeight/2 +(cornerRadius/2), boxWidth -cornerRadius, boxHeight-cornerRadius);
+			ctx.fillRect(s.x - boxWidth/2+(cornerRadius/2),  s.y - boxHeight/2+(cornerRadius/2), boxWidth-cornerRadius, boxHeight-cornerRadius);
+
+			if (node.data.image === undefined) {
 				ctx.textAlign = "left";
 				ctx.textBaseline = "top";
 				ctx.font = (node.data.font !== undefined) ? node.data.font : nodeFont;
-				ctx.fillStyle = "#000000";
+				// font color is below LV
+				ctx.fillStyle = "darkblue";
 				var text = (node.data.label !== undefined) ? node.data.label : node.id;
 				ctx.fillText(text, s.x - contentWidth/2, s.y - contentHeight/2);
 			} else {
