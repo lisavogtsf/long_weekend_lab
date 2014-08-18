@@ -28,8 +28,8 @@ Customization by Lisa Vogt, 2014
 
 jQuery.fn.springy = function(params) {
 	var graph = this.graph = params.graph || new Springy.Graph();
-	var nodeFont = "24px Verdana, sans-serif";
-	var edgeFont = "12px Verdana, sans-serif";
+	var nodeFont = "24px Optima, sans-serif";
+	var edgeFont = "12px Optima, sans-serif";
 	var stiffness = params.stiffness || 400.0;
 	var repulsion = params.repulsion || 400.0;
 	var damping = params.damping || .3; //0.5
@@ -300,8 +300,8 @@ jQuery.fn.springy = function(params) {
 
 			// Pulled out the padding aspect sso that the size functions could be used in multiple places
 			// These should probably be settable by the user (and scoped higher) but this suffices for now
-			var paddingX = 6;
-			var paddingY = 6;
+			var paddingX = 28;
+			var paddingY = 12;
 
 			var contentWidth = node.getWidth();
 			var contentHeight = node.getHeight();
@@ -312,20 +312,37 @@ jQuery.fn.springy = function(params) {
 			ctx.clearRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
 
 			// fill background
+			// good place to mess around with node background colors LV
 			if (selected !== null && selected.node !== null && selected.node.id === node.id) {
-				ctx.fillStyle = "#FFFFE0";
+				ctx.fillStyle = "lavender"; //"#FFFFE0"
 			} else if (nearest !== null && nearest.node !== null && nearest.node.id === node.id) {
-				ctx.fillStyle = "#EEEEEE";
+				ctx.fillStyle = "thistle"; //"#EEEEEE"
 			} else {
-				ctx.fillStyle = "#FFFFFF";
+				ctx.fillStyle = "slategrey"; //#FFFFFF
 			}
-			ctx.fillRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
 
-			if (node.data.image == undefined) {
+			// to make rounded corners using HTML5 canvas code LV
+			// below not working LV
+			// context.fillRect(s.x + (cornerRadius/2), s.y + (cornerRadius / 2), boxWidth - cornerRadius, boxHeight -cornerRadius);
+
+			// // pasted from info on how to do rounded rectangles jFiddle LV
+			var cornerRadius = 10;
+
+			// Set faux rounded corners
+			ctx.lineJoin = "round";
+			ctx.lineWidth = cornerRadius;
+
+			// // Change origin and dimensions to match true size (a stroke makes the shape a bit larger)
+			ctx.strokeRect(s.x - boxWidth/2 +(cornerRadius/2), s.y - boxHeight/2 +(cornerRadius/2), boxWidth -cornerRadius, boxHeight-cornerRadius);
+			ctx.strokeStyle = "slategrey";
+			ctx.fillRect(s.x - boxWidth/2+(cornerRadius/2),  s.y - boxHeight/2+(cornerRadius/2), boxWidth-cornerRadius, boxHeight-cornerRadius);
+
+			if (node.data.image === undefined) {
 				ctx.textAlign = "left";
 				ctx.textBaseline = "top";
 				ctx.font = (node.data.font !== undefined) ? node.data.font : nodeFont;
-				ctx.fillStyle = "#000000";
+				// font color is below LV
+				ctx.fillStyle = "darkblue";
 				var text = (node.data.label !== undefined) ? node.data.label : node.id;
 				ctx.fillText(text, s.x - contentWidth/2, s.y - contentHeight/2);
 			} else {

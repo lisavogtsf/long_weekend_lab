@@ -1,54 +1,28 @@
-{:filename=>"config"}
-{:filename=>"migrations"}
-{:filename=>"models"}
-{:filename=>"public"}
-{:filename=>"test"}
-{:filename=>"views"}
-{:filename=>".gitignore"}
-{:filename=>"Procfile"}
-{:filename=>"README.md"}
-{:filename=>"app.js"}
-{:filename=>"console.js"}
-{:filename=>"package.json"}
-{:filename=>"project1_specs.md"}
+config
+migrations
+models
+public
+test
+views
+.gitignore
+Procfile
+README.md
+app.js
+console.js
+package.json
+project1_specs.md
 [
-    [ 0] {
-        :filename => "config"
-    },
-    [ 1] {
-        :filename => "migrations"
-    },
-    [ 2] {
-        :filename => "models"
-    },
-    [ 3] {
-        :filename => "public"
-    },
-    [ 4] {
-        :filename => "test"
-    },
-    [ 5] {
-        :filename => "views"
-    },
-    [ 6] {
-        :filename => ".gitignore"
-    },
-    [ 7] {
-        :filename => "Procfile"
-    },
-    [ 8] {
-        :filename => "README.md"
-    },
-    [ 9] {
-        :filename => "app.js"
-    },
-    [10] {
-        :filename => "console.js"
-    },
-    [11] {
-        :filename => "package.json"
-    },
-    [12] {
-        :filename => "project1_specs.md"
-    }
+    [ 0] "config",
+    [ 1] "migrations",
+    [ 2] "models",
+    [ 3] "public",
+    [ 4] "test",
+    [ 5] "views",
+    [ 6] ".gitignore",
+    [ 7] "Procfile",
+    [ 8] "README.md",
+    [ 9] "app.js",
+    [10] "console.js",
+    [11] "package.json",
+    [12] "project1_specs.md"
 ]

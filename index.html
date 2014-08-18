@@ -3,58 +3,74 @@
 <head>
 	<title>SpringyLV</title>
 	<!-- Latest compiled and minified CSS -->
-	<link rel ="stylesheet" href="public/custom_style.css"
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	
+	<link rel ="stylesheet" href="public/custom_style.css">
 	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<!--from Springy.js -->
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+				<script src="springy.js"></script>
+				<script src="springyui.js"></script>
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron">
-			<h2>Springy LV</h2>
+		<div class="row">
+			<!-- removed left column -->
+			<div class="col-md-12" id="springy-col"><!--big central column-->
+				<h2>Springy LV</h2>
+				<script>
+					var graphJSON = {
+						"nodes": [
+							"README.md",
+							"config",
+							"migrations",
+							"models",
+							"public",
+							"test",
+							"views",
+							".gitignore",
+							"Procfile",
+							"app.js",
+							"console.js",
+							"package.json",
+							"project1_specs.md"
+						],
+						"edges": [
+							["README.md", "config", {color: '#CC333F'}],
+							["config", "README.md"],
+							["config", "migrations"],
+							["README.md", "models"],
+							["models", "README.md"],
+							["app.js", "README.md"],
+							["config", "app.js"],
+							["public", "app.js"],
+							["test", "app.js"],
+							["views", "app.js"]
 
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-			<script src="springy.js"></script>
-			<script src="springyui.js"></script>
-			<script>
-				var graphJSON = {
-				  "nodes": [
-				    "README.md",
-				    "myTest.js",
-				    "scraper.js",
-				    "today.html",
-				    "spec"
-				  ],
-				  "edges": [
-				    ["README.md", "myTest.js"],
-				    ["myTest.js", "README.md"],
-				    ["myTest.js", "scraper.js"],
-				    ["README.md", "today.html"],
-				    ["today.html", "README.md"],
-				    ["spec", "README.md"],
-				    ["myTest.js", "today.html"],
+						]
+					};
 
-				  ]
-				};
+					jQuery(function(){
+						var graph = new Springy.Graph();
+						graph.loadJSON(graphJSON);
 
-				jQuery(function(){
-				  var graph = new Springy.Graph();
-				  graph.loadJSON(graphJSON);
+						var springy = jQuery('#springydemo').springy({
+							graph: graph,
+							nodeSelected: function(node){
+      							console.log('Node selected: ' + JSON.stringify(node.data));
+							}
+						});
+					});
 
-				  var springy = jQuery('#springydemo').springy({
-				    graph: graph
-				  });
-				});
+				</script>
 
-			</script>
+				<canvas id="springydemo" width="600" height="600" align="center">Springy filenames</canvas>
 
-			<canvas id="springydemo" width="600" height="400" />
-
-		</div><!-- closes jumbotron -->
+			</div><!-- closes center column -->
+			<!-- removed right column -->
+		</div> <!-- closes row -->
 	</div><!-- closes container -->
 </body>
 </html>
