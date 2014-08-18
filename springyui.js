@@ -1,6 +1,6 @@
+/* customization of Springy by Lisa Vogt 2014 */
 /**
 Copyright (c) 2010 Dennis Hotson
-Customization by Lisa Vogt, 2014
 
  Permission is hereby granted, free of charge, to any person
  obtaining a copy of this software and associated documentation
@@ -333,8 +333,9 @@ jQuery.fn.springy = function(params) {
 			ctx.lineWidth = cornerRadius;
 
 			// // Change origin and dimensions to match true size (a stroke makes the shape a bit larger)
-			ctx.strokeRect(s.x - boxWidth/2 +(cornerRadius/2), s.y - boxHeight/2 +(cornerRadius/2), boxWidth -cornerRadius, boxHeight-cornerRadius);
 			ctx.strokeStyle = "slategrey";
+			ctx.strokeRect(s.x - boxWidth/2 +(cornerRadius/2), s.y - boxHeight/2 +(cornerRadius/2), boxWidth -cornerRadius, boxHeight-cornerRadius);
+			ctx.fill();
 			ctx.fillRect(s.x - boxWidth/2+(cornerRadius/2),  s.y - boxHeight/2+(cornerRadius/2), boxWidth-cornerRadius, boxHeight-cornerRadius);
 
 			if (node.data.image === undefined) {
@@ -342,7 +343,7 @@ jQuery.fn.springy = function(params) {
 				ctx.textBaseline = "top";
 				ctx.font = (node.data.font !== undefined) ? node.data.font : nodeFont;
 				// font color is below LV
-				ctx.fillStyle = "darkblue";
+				ctx.fillStyle = "black";
 				var text = (node.data.label !== undefined) ? node.data.label : node.id;
 				ctx.fillText(text, s.x - contentWidth/2, s.y - contentHeight/2);
 			} else {

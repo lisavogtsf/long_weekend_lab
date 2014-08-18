@@ -1,8 +1,8 @@
+/* customization of Springy by Lisa Vogt 2014 */
 /**
  * Springy v2.6.1
  *
  * Copyright (c) 2010-2013 Dennis Hotson
- * Customization by Lisa Vogt, 2014
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -25,6 +25,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  */
+
 
 (function() {
 	// Enable strict mode for EC5 compatible browsers
@@ -512,6 +513,7 @@
 			}
 
 			// stop simulation when energy of the system goes below a threshold
+			// wonder if this would be a good place to restart LV
 			if (t._stop || t.totalEnergy() < t.minEnergyThreshold) {
 				t._started = false;
 				if (onRenderStop !== undefined) { onRenderStop(); }
