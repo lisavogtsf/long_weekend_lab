@@ -1,9 +1,11 @@
 # Long-weekend Lab
 
+[Springy.js visualization of my GitHub repos](http://lisavogtsf.github.io/long_weekend_lab/)
+
 ## Concept
 
-Create a simple scraper for GitHub, just to gather file names and directory names and nesting.
+Use Nokogiri/Ruby scraper to pull filenames from my GitHub pages
 
-Feed those names into Springy.js
+Feed those names into Springy.js, as JSON files
 
 Show interactive relationships of the files in a GitHub repo
