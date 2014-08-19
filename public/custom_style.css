@@ -5931,5 +5931,13 @@ div.container {
       border-radius: 20px;
       font-weight: bolder;
       color: "#98758B";
-      background-color: "thistle";
 }
+a:hover {
+  color: white;
+  font-weight: normal;
+}
+/*
+Toggle for presentation
+a {
+  color: white;
+}*/
