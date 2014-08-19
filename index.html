@@ -21,6 +21,7 @@
 			<div class="col-lg-1"></div><!-- removed left column -->
 			<div class="col-md-10" id="springy-col"><!--big central column-->
 				<h2>Springy LV</h2>
+				<button id="reload">Reset Springy</button>
 				<div id="nodeInfo"></div>
 				<script>
 					var graphJSON = {
@@ -61,9 +62,12 @@
 								var nodeLabel = (node.data.label);
       							console.log('Node selected: ' + nodeLabel);
       							$('#nodeInfo').empty();
-      							$('#nodeInfo').append("<p>" + nodeLabel + "</p>");
+      							$('#nodeInfo').append("<h3>Currently selected node: " + nodeLabel + "</h3>");
 							}
 						});
+					});
+					$('#reload').click(function() {
+						location.reload(true);
 					});
 
 				</script>

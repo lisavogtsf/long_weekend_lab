@@ -5900,11 +5900,11 @@ td.visible-print {
 Additions by Lisa Vogt
 **************/
 body {
-  /*background-color: slategrey;*/
-  /*background-color: darkslateblue;*/
-  /*background-color: lightsteelblue;*/
   background-color: slategrey;
   color: thistle
+}
+h3 {
+  font-family: Optima, sans-serif;
 }
 div.container {
   border: slategrey;
@@ -5914,22 +5914,21 @@ div.container {
     height: 600px;
     background-color: slategrey;
 }
-/*#left-col:hover {
-  background-color: thistle;
-}*/
 
 #springy-col {
-	/*background-image: url("hexellence.png");*/
-	/*background-image: url("wild_olivia/wild_olivia.png");*/
-	/*background-image: url("nami/nami.png");*/
-	/*background-image: url("strange_bullseyes/strange_bullseyes.png")*/
-	/*background-image: url("foggy_birds/foggy_birds.png");*/
-	/*background-image: url("greyfloral/greyfloral.png");*/
-	background-image: url("random_grey_variations.png");
+    background-image: url("random_grey_variations.png");
     border-radius: 20px;
 }
 
 .highlighted {
   font-weight: bold;
   background-color: teal;
+}
+#reload {
+      border-radius: 20px;
+      font-weight: bold;
+      color: black;
+}
+#nodeInfo {
+  height: 30px;
 }
