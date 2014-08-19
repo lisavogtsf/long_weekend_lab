@@ -22,9 +22,9 @@
 			<div class="col-md-10" id="springy-col"><!--big central column-->
 				<h2>Visualize GitHub Repositories with <a id="reload"><strong>Springy.js</strong></a></h2>
 				<ul class="list-inline">
-					<li>eBook Dashboard</li>
+					<li><a href="index.html">eBook Dashboard</a></li>
 					<li><a href="todo.html">Do all the things!</a></li>
-					<li><a href="beginner-resources.html">Beginner Resources</a></li>
+					<li>Beginner Resources</li>
 <!-- 					<li>[Visit Repository]</li>
 					<li>[Visit Webpage]</li> -->
 				</ul>
@@ -32,26 +32,26 @@
 				<script>
 					var graphJSON = {
 						"nodes": [
+							"css",
+							".nojekyll",
 							"README.md",
-							"config",
-							"migrations",
-							"models",
-							"public",
-							"test",
-							"views",
-							"app.js"
+							"calendar-css.png",
+							"index.html",
+							"map-doc.md",
+							"publish.png",
+							"ss-cal.png",
+							"with-map.png"
 						],
 						"edges": [
-							["README.md", "config", {color: 'purple'}],
-							["config", "README.md", {color: 'thistle'}],
-							["config", "migrations"],
-							["README.md", "models", {color: 'mediumslateblue'}],
-							["models", "README.md"],
-							["app.js", "README.md"],
-							["config", "app.js", {color: 'teal'}],
-							["public", "app.js"],
-							["test", "app.js"],
-							["views", "app.js"]
+							["index.html", ".nojekyll", {color: 'violet'}],
+							["index.html", "css", {color: 'darkorchid'}],
+							["index.html", "README.md", {color: 'slateblue'}],
+							["index.html", "calendar-css.png", {color: 'teal'}],
+							["publish.png", "css"],
+							["map-doc.md", ".nojekyll"],
+							["ss-cal.png", "index.html"],
+							["with-map.png", "css", {color: "thistle"}],
+							["css", "index.html"]
 						]
 					};
 					$(function(){
@@ -70,9 +70,11 @@
 							}
 						});
 					});
+
 					$('#reload').click(function() {
 						location.reload(true);
 					});
+
 
 				</script>
 

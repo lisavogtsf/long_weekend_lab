@@ -22,36 +22,32 @@
 			<div class="col-md-10" id="springy-col"><!--big central column-->
 				<h2>Visualize GitHub Repositories with <a id="reload"><strong>Springy.js</strong></a></h2>
 				<ul class="list-inline">
-					<li>eBook Dashboard</li>
-					<li><a href="todo.html">Do all the things!</a></li>
+					<li><a href="index.html">eBook Dashboard</a></li>
+					<li>Do all the things!</li>
 					<li><a href="beginner-resources.html">Beginner Resources</a></li>
 <!-- 					<li>[Visit Repository]</li>
 					<li>[Visit Webpage]</li> -->
 				</ul>
+<!-- 				<button id="reload">Reset Springy</button> -->
 				<div id="nodeInfo"><h4>No node selected</h4></div>
 				<script>
 					var graphJSON = {
 						"nodes": [
 							"README.md",
-							"config",
-							"migrations",
-							"models",
-							"public",
-							"test",
-							"views",
-							"app.js"
+							"hyperbole.jpeg",
+							"index.html",
+							"script.js",
+							"style.css"
 						],
 						"edges": [
-							["README.md", "config", {color: 'purple'}],
-							["config", "README.md", {color: 'thistle'}],
-							["config", "migrations"],
-							["README.md", "models", {color: 'mediumslateblue'}],
-							["models", "README.md"],
-							["app.js", "README.md"],
-							["config", "app.js", {color: 'teal'}],
-							["public", "app.js"],
-							["test", "app.js"],
-							["views", "app.js"]
+							["index.html", "script.js", {color: 'mediumslateblue'}],
+							["index.html", "style.css", {color: 'darkorchid'}],
+							["index.html", "README.md", {color: 'slateblue'}],
+							["index.html", "hyperbole.jpeg", {color: 'thistle'}],
+							["script.js", "index.html"],
+							["style.css", "index.html"],
+							["hyperbole.jpeg", "index.html"],
+							["script.js", "style.css", {color: "thistle"}]
 						]
 					};
 					$(function(){
@@ -70,9 +66,11 @@
 							}
 						});
 					});
+
 					$('#reload').click(function() {
 						location.reload(true);
 					});
+
 
 				</script>
 

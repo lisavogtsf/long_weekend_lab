@@ -5,7 +5,7 @@ require 'awesome_print'
 # adapted from in-class nokogiri assignment 
 
 # term = ARGV[0]
-url = open("https://github.com/lisavogtsf/firstProjectWDI").read
+url = open("https://github.com/lisavogtsf/BeginnerResources-calendar").read
 # url = open("hn.html").read
 
 page = Nokogiri::HTML(url)
