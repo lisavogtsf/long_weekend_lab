@@ -30,6 +30,12 @@ jQuery.fn.springy = function(params) {
 	var graph = this.graph = params.graph || new Springy.Graph();
 	var nodeFont = "24px Optima, sans-serif";
 	var edgeFont = "12px Optima, sans-serif";
+	var nodeFontColor = "black";
+	var selectedNodeColor = "lavender";
+	var nearestNodeColor = "thistle";
+	var baseNodeColor = "slategrey";
+	var borderNodeColor = "slategrey";
+	var baseEdgeColor = "grey";
 	var stiffness = params.stiffness || 400.0;
 	var repulsion = params.repulsion || 400.0;
 	var damping = params.damping || .3; //0.5
@@ -228,12 +234,13 @@ jQuery.fn.springy = function(params) {
 				intersection = s2;
 			}
 
-			var stroke = (edge.data.color !== undefined) ? edge.data.color : '#000000';
+			// default edge color here LV
+			var stroke = (edge.data.color !== undefined) ? edge.data.color : baseEdgeColor;
 
 			var arrowWidth;
 			var arrowLength;
 
-			var weight = (edge.data.weight !== undefined) ? edge.data.weight : 1.0;
+			var weight = (edge.data.weight !== undefined) ? edge.data.weight : 2.0;
 
 			ctx.lineWidth = Math.max(weight *  2, 0.1);
 			arrowWidth = 1 + ctx.lineWidth;
@@ -312,13 +319,14 @@ jQuery.fn.springy = function(params) {
 			ctx.clearRect(s.x - boxWidth/2, s.y - boxHeight/2, boxWidth, boxHeight);
 
 			// fill background
-			// good place to mess around with node background colors LV
+			// good place to play with node background colors LV
 			if (selected !== null && selected.node !== null && selected.node.id === node.id) {
-				ctx.fillStyle = "lavender"; //"#FFFFE0"
+				ctx.fillStyle = selectedNodeColor; //"#FFFFE0"
+				// console.log("node was selected, ", node.id.label);
 			} else if (nearest !== null && nearest.node !== null && nearest.node.id === node.id) {
-				ctx.fillStyle = "thistle"; //"#EEEEEE"
+				ctx.fillStyle = nearestNodeColor; //"#EEEEEE"
 			} else {
-				ctx.fillStyle = "slategrey"; //#FFFFFF
+				ctx.fillStyle = baseNodeColor; //#FFFFFF
 			}
 
 			// to make rounded corners using HTML5 canvas code LV
@@ -333,7 +341,7 @@ jQuery.fn.springy = function(params) {
 			ctx.lineWidth = cornerRadius;
 
 			// // Change origin and dimensions to match true size (a stroke makes the shape a bit larger)
-			ctx.strokeStyle = "slategrey";
+			ctx.strokeStyle = borderNodeColor;
 			ctx.strokeRect(s.x - boxWidth/2 +(cornerRadius/2), s.y - boxHeight/2 +(cornerRadius/2), boxWidth -cornerRadius, boxHeight-cornerRadius);
 			ctx.fill();
 			ctx.fillRect(s.x - boxWidth/2+(cornerRadius/2),  s.y - boxHeight/2+(cornerRadius/2), boxWidth-cornerRadius, boxHeight-cornerRadius);
@@ -343,7 +351,7 @@ jQuery.fn.springy = function(params) {
 				ctx.textBaseline = "top";
 				ctx.font = (node.data.font !== undefined) ? node.data.font : nodeFont;
 				// font color is below LV
-				ctx.fillStyle = "black";
+				ctx.fillStyle = nodeFontColor;
 				var text = (node.data.label !== undefined) ? node.data.label : node.id;
 				ctx.fillText(text, s.x - contentWidth/2, s.y - contentHeight/2);
 			} else {
