@@ -9,3 +9,5 @@ Use Nokogiri/Ruby scraper to pull filenames from my GitHub pages
 Feed those names into Springy.js, as JSON files
 
 Show interactive relationships of the files in a GitHub repo
+
+Changes to readme file
