@@ -336,11 +336,11 @@ jQuery.fn.springy = function(params) {
 			// // pasted from info on how to do rounded rectangles jFiddle LV
 			var cornerRadius = 10;
 
-			// Set faux rounded corners LV
+			// Set faux rounded corners
 			ctx.lineJoin = "round";
 			ctx.lineWidth = cornerRadius;
 
-			// // Change origin and dimensions to match true size (a stroke makes the shape a bit larger) LV
+			// // Change origin and dimensions to match true size (a stroke makes the shape a bit larger)
 			ctx.strokeStyle = borderNodeColor;
 			ctx.strokeRect(s.x - boxWidth/2 +(cornerRadius/2), s.y - boxHeight/2 +(cornerRadius/2), boxWidth -cornerRadius, boxHeight-cornerRadius);
 			ctx.fill();
